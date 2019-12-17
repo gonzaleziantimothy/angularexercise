@@ -45,6 +45,16 @@
                     template: '<course-list></course-list>'
                 },
                 {
+                    name: 'course',
+                    url: '/course/{courseId}',
+                    resolve: {
+                        courseId: function ($stateParams) {
+                            return $stateParams.courseId;
+                        }
+                    },
+                    template: '<course course-id="$resolve.courseId"></course>'
+                },
+                {
                     name: 'authors',
                     url: '/authors',
                     template: '<author-list></author-list>'
